@@ -37,7 +37,7 @@ jobs:
 
       - name: binary-builder
         if: ${{ matrix.arch == 'x86_64' }} # diable aarch64 for now
-        uses: containerbase/internal-tools@v2.0.0
+        uses: containerbase/internal-tools@7fb857084d40e89ba7d1534da4944012628cecb9 # v2.0.0
         with:
           command: binary-builder
           dry-run: ${{github.ref_name != 'main'}}

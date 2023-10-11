@@ -5,5 +5,5 @@
   "versioning": "semver",
   "startVersion": "1.22.6",
   "ignoredVersions": [],
-  "allowedVersions": "3.13.5"
+  "allowedVersions": ">=1.0.0"
 }

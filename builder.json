@@ -1,0 +1,9 @@
+{
+  "image": "flutter",
+  "depName": "flutter",
+  "datasource": "flutter-version",
+  "versioning": "semver",
+  "startVersion": "1.22.6",
+  "ignoredVersions": [],
+  "allowedVersions": "3.13.5"
+}

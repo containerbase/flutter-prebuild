@@ -33,10 +33,26 @@ check_semver "${TOOL_VERSION}"
 
 echo "Building ${NAME} ${TOOL_VERSION} for ${ARCH}"
 
-# based on
-# https://github.com/flutter/flutter/blob/cd41fdd495f6944ecd3506c21e94c6567b073278/dev/bots/prepare_package.dart#L450
+echo "------------------------"
+echo "init repo"
+versioned_tool_path="/opt/containerbase/tools/${NAME}/${TOOL_VERSION}"
+
+git clone \
+    --quiet \
+    --filter=blob:none \
+    --branch "stable" \
+    https://github.com/flutter/flutter.git \
+    "${versioned_tool_path}"
+
+export PATH="${versioned_tool_path}/bin:${PATH}"
+pushd "${versioned_tool_path}" > /dev/null
 
 git reset --hard "${TOOL_VERSION}"
+
+echo "------------------------"
+echo "init flutter"
+# based on
+# https://github.com/flutter/flutter/blob/cd41fdd495f6944ecd3506c21e94c6567b073278/dev/bots/prepare_package.dart#L450
 
 # build flutter
 flutter --version > /dev/null
@@ -46,16 +62,29 @@ flutter --version > /dev/null
 flutter --version
 
 # populate caches
-flutter doctor
-flutter update-packages
-flutter precache
+flutter pub get --help > /dev/null
+#flutter doctor
+#flutter update-packages
+#flutter precache
 
-# cleanup 
-git clean -f -x -- '**/.packages'
-git clean -f -x -- '**/.dart_tool/'
-rm -rf /src/flutter/.pub-cache/git
+# cleanup
+echo "------------------------"
+echo "cleanup"
+git clean -f -x -- '**/.packages' > /dev/null
+git clean -f -x -- '**/.dart_tool/' > /dev/null
+rm -rf /src/flutter/.pub-cache/git > /dev/null
 
-tar -cJf "/cache/${NAME}-${TOOL_VERSION}-${ARCH}.tar.xz" .
+# fix perms
+echo "------------------------"
+echo "fix perms"
+chmod -R g+w .
+
+popd > /dev/null
+
+# create archive
+echo "------------------------"
+echo "create archive"
+tar -cJf "/cache/${NAME}-${TOOL_VERSION}-${ARCH}.tar.xz" -C /opt/containerbase/tools/flutter "${TOOL_VERSION}"
 
 # mkdir -p "/usr/local/${NAME}/${TOOL_VERSION}"
 # tar -C "/usr/local/${NAME}/${TOOL_VERSION}" --strip 1 -xf "${file}"

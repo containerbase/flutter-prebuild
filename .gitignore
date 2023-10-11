@@ -132,3 +132,4 @@ dist
 
 # custom stuff
 .cache/
+test/

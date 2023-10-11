@@ -2,9 +2,4 @@
 
 set -e
 
-mkdir -p /src /cache
-
-git clone \
-  -b stable \
-  https://github.com/flutter/flutter.git \
-  /src/flutter
+mkdir -p /opt/containerbase/tools/flutter /cache

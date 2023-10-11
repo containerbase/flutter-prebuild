@@ -8,6 +8,3 @@ ENTRYPOINT [ "dumb-init", "--", "builder.sh" ]
 COPY bin /usr/local/bin
 
 RUN install-builder.sh
-
-WORKDIR /src/flutter
-ENV PATH=/src/flutter/bin:$PATH

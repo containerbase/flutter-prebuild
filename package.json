@@ -5,6 +5,7 @@
   "repository": "https://github.com/containerbase/flutter-prebuild.git",
   "license": "MIT",
   "author": "Michael Kriese <michael.kriese@visualon.de>",
+  "type": "module",
   "scripts": {
     "lint": "run-s prettier",
     "postinstall": "husky install",

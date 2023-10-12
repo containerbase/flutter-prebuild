@@ -8,6 +8,8 @@ on:
 
   pull_request:
 
+  merge_group:
+
   schedule:
     - cron: '0 1 * * *'
 
@@ -16,11 +18,32 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+
+      - name: enable corepack
+        run: corepack enable
+
+      - name: install deps
+        run: yarn install
+
+      - name: lint
+        run: yarn lint
+
   build:
     runs-on: ubuntu-latest
+
+    needs:
+      - lint
+
+    permissions:
+      contents: write
 
     strategy:
       fail-fast: false

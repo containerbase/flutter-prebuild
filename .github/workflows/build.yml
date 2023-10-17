@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: enable corepack
         run: corepack enable
@@ -55,7 +55,7 @@ jobs:
       ARCH: ${{ matrix.arch }} # build target, name required by binary-builder
 
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: binary-builder
         uses: containerbase/internal-tools@807c465b4f4bc65a76611be701c03f1bfc55e587 # v2.0.1

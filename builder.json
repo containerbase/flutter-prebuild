@@ -3,7 +3,7 @@
   "depName": "flutter",
   "datasource": "flutter-version",
   "versioning": "semver",
-  "startVersion": "1.22.6",
+  "startVersion": "3.0.0",
   "ignoredVersions": [],
-  "allowedVersions": ">=1.0.0"
+  "allowedVersions": ">=3.0.0"
 }

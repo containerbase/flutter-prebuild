@@ -1,6 +1,5 @@
 {
   "name": "containerbase-flutter-prebuild",
-  "version": "1.0.0",
   "private": true,
   "repository": "https://github.com/containerbase/flutter-prebuild.git",
   "license": "MIT",
@@ -8,20 +7,20 @@
   "type": "module",
   "scripts": {
     "lint": "run-s prettier",
-    "postinstall": "husky install",
-    "prettier": "prettier \"{**/*,*}.*\" --check --ignore-unknown",
-    "prettier:fix": "prettier \"{**/*,*}.*\" --write --ignore-unknown"
+    "prepare": "husky",
+    "prettier": "prettier --cache -c -u '**/*.*'",
+    "prettier-fix": "prettier --cache -w -u '**/*.*'"
   },
   "devDependencies": {
-    "husky": "8.0.3",
-    "lint-staged": "15.2.0",
-    "npm-run-all": "4.1.5",
+    "husky": "9.0.7",
+    "lint-staged": "15.2.1",
+    "npm-run-all2": "6.1.1",
     "prettier": "3.2.4",
-    "prettier-plugin-packagejson": "2.4.9"
+    "prettier-plugin-packagejson": "2.4.10"
   },
-  "packageManager": "yarn@3.7.0",
+  "packageManager": "pnpm@8.15.1",
   "engines": {
-    "node": ">=18.12.0",
-    "yarn": "^3.5.0"
+    "node": ">=20.9.0",
+    "pnpm": "^8.0.0"
   }
 }

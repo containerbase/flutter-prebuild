@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: binary-builder
-        uses: containerbase/internal-tools@bbe92263bdc6c66203234f0ab89695137157506c # v3.3.11
+        uses: containerbase/internal-tools@61cdbfdb63e1ead978829d1c75ed36c0f3120512 # v3.3.12
         with:
           command: binary-builder
           dry-run: ${{github.ref_name != 'main'}}

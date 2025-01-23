@@ -4,7 +4,7 @@
   "packageRules": [
     {
       "description": "Allow minor updates on renovate rebuild trigger files",
-      "matchFiles": ["renovate.Dockerfile"],
+      "matchFileNames": ["renovate.Dockerfile"],
       "matchUpdateTypes": ["minor"],
       "enabled": true
     }

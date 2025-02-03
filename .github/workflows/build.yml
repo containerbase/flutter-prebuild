@@ -60,7 +60,7 @@ jobs:
           show-progress: false
 
       - name: binary-builder
-        uses: containerbase/internal-tools@4453842226e67bc5d507c41b21184cc9220f4974 # v3.5.19
+        uses: containerbase/internal-tools@fcbde3cdedad26eabf59776988e2a4b47fee98e5 # v3.7.0
         with:
           command: binary-builder
           dry-run: ${{github.ref_name != 'main'}}

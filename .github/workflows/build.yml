@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@82eae9bb384849f340bbf269d995aa7badc4aa13 # v3.10.41
+        uses: containerbase/internal-tools/setup@e9586b5ff433686becf57ffa6eead0c7a2854f64 # v3.10.42
         with:
           save-cache: true
 
@@ -60,7 +60,7 @@ jobs:
           show-progress: false
 
       - name: binary-builder
-        uses: containerbase/internal-tools@82eae9bb384849f340bbf269d995aa7badc4aa13 # v3.10.41
+        uses: containerbase/internal-tools@e9586b5ff433686becf57ffa6eead0c7a2854f64 # v3.10.42
         with:
           command: binary-builder
           dry-run: ${{github.ref_name != 'main'}}

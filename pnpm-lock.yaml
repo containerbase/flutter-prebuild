@@ -12,8 +12,8 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: 16.3.3
-        version: 16.3.3
+        specifier: 16.3.4
+        version: 16.3.4
       npm-run-all2:
         specifier: 8.0.4
         version: 8.0.4
@@ -127,8 +127,8 @@ packages:
     resolution: {integrity: sha512-lR4MXjGNgkJc7tkQ97kb2nuEMnNCyU//XYVH0MKTGcXEiSudQ5MKGKen3C5QubYy0vmq+JGitUg92uuywGEwIA==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  lint-staged@16.3.3:
-    resolution: {integrity: sha512-RLq2koZ5fGWrx7tcqx2tSTMQj4lRkfNJaebO/li/uunhCJbtZqwTuwPHpgIimAHHi/2nZIiGrkCHDCOeR1onxA==}
+  lint-staged@16.3.4:
+    resolution: {integrity: sha512-U5bxYjQA+yeKm4+8bVlkixlDlXdqlrJJU1Rx/h2h1B/FSlt7zW2rkPcnpRHFkSyjkNX8gLXfgfYaDwWkDXbvsQ==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -361,7 +361,7 @@ snapshots:
 
   json-parse-even-better-errors@4.0.0: {}
 
-  lint-staged@16.3.3:
+  lint-staged@16.3.4:
     dependencies:
       commander: 14.0.3
       listr2: 9.0.5

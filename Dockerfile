@@ -1,6 +1,6 @@
 
 
-FROM ghcr.io/containerbase/base:14.10.19@sha256:9d6f5a41d87448d5026dbd52552a2caa78094e15429356854ceb29aa404b0c47
+FROM ghcr.io/containerbase/base:14.10.20@sha256:87954976479f60a14ee0728d6f5716ba6a2739df3f45257cebb1e1f2b28df481
 
 
 ENTRYPOINT [ "dumb-init", "--", "builder.sh" ]

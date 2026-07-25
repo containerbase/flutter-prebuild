@@ -18,7 +18,7 @@
     "prettier": "3.9.6",
     "prettier-plugin-packagejson": "3.0.2"
   },
-  "packageManager": "pnpm@11.15.1",
+  "packageManager": "pnpm@11.16.0",
   "engines": {
     "node": "^22.11.0  || >=24.11.0",
     "pnpm": "^11.0.0"

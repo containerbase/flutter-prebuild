@@ -1,3 +1,4 @@
 {
-  "*": "prettier --ignore-unknown --write"
+  ".github/workflows/*.{yml,yaml}": ["jactionlint", "zizmor --offline"],
+  "*": "oxfmt --no-error-on-unmatched-pattern"
 }

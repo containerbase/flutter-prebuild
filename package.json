@@ -1,26 +1,25 @@
 {
   "name": "containerbase-flutter-prebuild",
   "private": true,
-  "repository": "https://github.com/containerbase/flutter-prebuild.git",
   "license": "MIT",
   "author": "Michael Kriese <michael.kriese@visualon.de>",
+  "repository": "https://github.com/containerbase/flutter-prebuild.git",
   "type": "module",
   "scripts": {
-    "lint": "run-s prettier",
+    "lint": "run-s oxfmt",
     "prepare": "husky",
-    "prettier": "prettier --cache -c -u '**/*.*'",
-    "prettier-fix": "prettier --cache -w -u '**/*.*'"
+    "oxfmt": "oxfmt --check",
+    "oxfmt-fix": "oxfmt"
   },
   "devDependencies": {
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
     "npm-run-all2": "9.0.3",
-    "prettier": "3.9.10",
-    "prettier-plugin-packagejson": "3.0.2"
+    "oxfmt": "0.72.0"
   },
-  "packageManager": "pnpm@12.12.1",
   "engines": {
     "node": "^22.11.0  || >=24.11.0",
     "pnpm": "^12.0.0"
-  }
+  },
+  "packageManager": "pnpm@12.12.1"
 }

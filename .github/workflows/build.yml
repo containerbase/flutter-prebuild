@@ -67,7 +67,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   success:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-slim
     needs:
       - lint
       - build

@@ -21,8 +21,14 @@ permissions:
 
 jobs:
   lint:
-    runs-on: ubuntu-24.04
+    # the scheduled builds only pick up new releases, the code is already linted
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-slim
     timeout-minutes: 10
+    env:
+      # node and pnpm come from the setup action, so `mise exec` must not
+      # install them again
+      MISE_EXEC_AUTO_INSTALL: 'false'
 
     steps:
       - name: ⚙️ Setup
@@ -33,9 +39,24 @@ jobs:
       - name: lint
         run: pnpm lint
 
+      - name: Install the workflow linters
+        uses: jdx/mise-action@08ae2a091c038e1e05ec6f5115dc5c69d5a2a6b8 # v5.1.2
+        with:
+          install_args: jactionlint shellcheck zizmor
+
+      - name: Check workflow files
+        run: mise exec -- jactionlint --color
+
+      - name: Run zizmor
+        run: mise exec -- zizmor --format github .github/
+        env:
+          GH_TOKEN: ${{ github.token }}
+
   build:
     needs:
       - lint
+    # also run when lint was skipped on schedule
+    if: ${{ !cancelled() && !failure() }}
     runs-on: ${{ matrix.arch.os }}
     name: build (${{ matrix.arch.name }})
 
@@ -57,6 +78,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          persist-credentials: false
           show-progress: false
 
       - name: binary-builder

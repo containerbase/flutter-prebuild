@@ -25,6 +25,9 @@ jobs:
     if: github.event_name != 'schedule'
     runs-on: ubuntu-slim
     timeout-minutes: 10
+    permissions:
+      contents: read
+      checks: write # shellcheck annotations
     env:
       # node and pnpm come from the setup action, so `mise exec` must not
       # install them again
@@ -51,6 +54,23 @@ jobs:
         run: mise exec -- zizmor --format github .github/
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: shellcheck
+        if: ${{ github.event_name != 'merge_group' }}
+        uses: reviewdog/action-shellcheck@d0b8d5fd7fad6afdb6e1b6ce1778892be4d1f427 # v1.34.1
+        with:
+          fail_level: any
+          reporter: github-pr-annotations
+          filter_mode: nofilter
+          path: |
+            bin
+            .husky
+          pattern: |
+            *.sh
+          exclude: |
+            ./.git/*
+            ./.husky/_/*
+          check_all_files_with_shebangs: 'true'
 
   build:
     needs:

@@ -78,6 +78,7 @@ jobs:
     # also run when lint was skipped on schedule
     if: ${{ !cancelled() && !failure() }}
     runs-on: ${{ matrix.arch.os }}
+    timeout-minutes: 60
     name: build (${{ matrix.arch.name }})
 
     permissions:

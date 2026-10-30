@@ -21,5 +21,5 @@
     "node": "^22.11.0  || >=24.11.0",
     "pnpm": "^12.0.0"
   },
-  "packageManager": "pnpm@12.15.0"
+  "packageManager": "pnpm@12.16.0"
 }

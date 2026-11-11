@@ -7,4 +7,4 @@
 FROM scratch
 
 # renovate: datasource=flutter-version depName=flutter
-ENV FLUTTER_VERSION=3.47.9
+ENV FLUTTER_VERSION=3.50.0

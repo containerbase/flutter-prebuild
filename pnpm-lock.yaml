@@ -179,8 +179,8 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: 17.6.1
-        version: 17.6.1
+        specifier: 17.6.2
+        version: 17.6.2
       npm-run-all2:
         specifier: 9.1.0
         version: 9.1.0
@@ -336,8 +336,8 @@ packages:
     resolution: {integrity: sha512-2/8adwnK1/+Fdjyts4r6wSpfANWw8zdNhU9U/Llk59c6O+DjSisPWPykwoL8gZmocP9Dy64S7oie2g+Mia123A==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
-  lint-staged@17.6.1:
-    resolution: {integrity: sha512-3MXgVN7BERDR/6CXZs2fDHGc+r0+hlvGAa9wqMlVbIS6RVRuaPOnb5SnN6wMXulwfEy9DXVkMVUN/8cUlpPDnw==}
+  lint-staged@17.6.2:
+    resolution: {integrity: sha512-c/JaXaXmleubmKUwwp4OAcq55RV9Z3HTUNdqdqPh2srtmP9Of3bcR6o00GoWDUye+9JhMuoYkhYqAVPIOZKcsw==}
     engines: {node: '>=22.22.1'}
     hasBin: true
 
@@ -497,7 +497,7 @@ snapshots:
 
   json-parse-even-better-errors@6.0.0: {}
 
-  lint-staged@17.6.1:
+  lint-staged@17.6.2:
     dependencies:
       picomatch: 4.0.7
       string-argv: 0.4.0
